@@ -29,13 +29,12 @@ h2{
 	font-size: 20px;
 	letter-spacing: 1px
 }
-.score {
+.scoreStyle {
 	font-family: "Raleway", sans-serif;
 	color: #0d2c40;
 	font-weight: 600;
 	font-size: 20px;
 	letter-spacing: 1px
-	padding: 40px 40px 40px 40px;
 }
 
 p {
