@@ -73,7 +73,7 @@ var cards= [
   var parent = document.getElementById("score");
   parent.removeChild(parent.lastChild)
   scor.innerHTML=counter;
-  scor.setAttribute("class",".scoreStyle");
+
   document.getElementById("score").appendChild(scor);
   }
 
@@ -81,5 +81,3 @@ var cards= [
 
 
 
-
-	
