@@ -33,14 +33,14 @@
 	function checkForMatch(){
 		if (cardsInPlay[0].rank === cardsInPlay[1].rank) {
 			alert("You found a match!");
-			removeOldCards();
-			createBoard();
+			setTimeout(function(){ removeOldCards() }, 1000);
+			setTimeout(function(){ createBoard() }, 1000);
 			counter++;
 			countScore();
 		} else {
 			alert("Sorry, try again.");
-			removeOldCards();
-			createBoard();
+			setTimeout(function(){ removeOldCards() }, 1000);
+			setTimeout(function(){ createBoard() }, 1000);
 			counter--;
 			countScore();
 
