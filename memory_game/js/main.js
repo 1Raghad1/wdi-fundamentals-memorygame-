@@ -49,13 +49,36 @@ if(cardsInPlay.length===2){
   checkForMatch();
 }
 }
-function mixCards(){
-var min=1; 
-    var max=4;  
-    var random = 
-    Math.floor(Math.random() * (+max - +min)) + +min; 
-    return random;               
+function linearSearch(array,target)
+{
+	for (var i=0;i<array.length;i++)                            //for loop to access each element in the array
+	{ 
+		if(array[i]===target)                                     //check if i-th index value is equal to our target
+		{
+			return 1;   
+		}
+		
+		
+	}
+	return 0;                                                  //if target does not exist in the array
 }
+
+function mixCards(){
+var min=0; 
+var max=4;  
+var used =[];
+var random =Math.floor(Math.random() * (+max - +min)) + +min;
+used.push(random);
+if(used.length>1){
+  if(linearSearch(used,random));
+      used.pop();
+      mixCards();
+	}else{
+		return random; 
+	}
+		
+}
+
 
 function createBoard(){
 for (var i = 0; i < cards.length; i++) {
@@ -63,6 +86,7 @@ for (var i = 0; i < cards.length; i++) {
 cardElement.setAttribute('src', "images/back.png");
 var cardRandom = mixCards();
 cardElement.setAttribute('data-id', cardRandom);
+cardElement.setAttribute('class', 'flip-card');
 cardElement.addEventListener("click", flipCard);
 document.getElementById("game-board").appendChild(cardElement);
 }
