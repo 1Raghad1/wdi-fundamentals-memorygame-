@@ -49,35 +49,16 @@ if(cardsInPlay.length===2){
   checkForMatch();
 }
 }
-function linearSearch(array,target)
-{
-	for (var i=0;i<array.length;i++)                            //for loop to access each element in the array
-	{ 
-		if(array[i]===target)                                     //check if i-th index value is equal to our target
-		{
-			return 1;   
-		}
-		
-		
-	}
-	return 0;                                                  //if target does not exist in the array
-}
 
 function mixCards(){
 var min=0; 
-var max=4;  
+var max=4;  //it will not appear cuz the floor function
 var used =[];
-var random =Math.floor(Math.random() * (+max - +min)) + +min;
-used.push(random);
-if(used.length>1){
-  if(linearSearch(used,random));
-      used.pop();
-      mixCards();
-	}else{
-		return random; 
-	}
-		
+var random =Math.floor(Math.random() * (+max - +min)) - +min;
+
+return random;		
 }
+
 
 
 function createBoard(){
