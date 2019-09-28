@@ -50,15 +50,15 @@ if(cardsInPlay.length===2){
 }
 }
 
+
 function mixCards(){
 var min=0; 
 var max=4;  //it will not appear cuz the floor function
 var used =[];
-var random =Math.floor(Math.random() * (+max - +min)) - +min;
+var random =Math.floor(Math.random() * (+max - +min)) + +min;
 
-return random;		
+			return random; 
 }
-
 
 
 function createBoard(){
